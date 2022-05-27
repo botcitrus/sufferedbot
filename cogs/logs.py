@@ -42,15 +42,6 @@ class Logs(commands.Cog):
         await channel.send(embed=embed)
 
     @commands.Cog.listener()
-    async def member_role_update(self, target, roles):
-        member = target
-        channel = self.bot.get_channel(979047685912928317)
-        embed = discord.Embed(color=0x2f3136, timestamp=datetime.datetime.utcnow())
-        embed.set_author(name=f"У {member.name} обновились роли", icon_url=member.avatar.url)
-        embed.add_field(name="Роли:", value=roles)
-        await channel.send(embed=embed)
-
-    @commands.Cog.listener()
     async def on_member_remove(self, member):
         channel = self.bot.get_channel(979047685912928317)
         embed = discord.Embed(color=0x2f3136, timestamp=datetime.datetime.utcnow())
