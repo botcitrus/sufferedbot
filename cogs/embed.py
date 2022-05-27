@@ -8,6 +8,7 @@ class idk(commands.Cog):
         self.bot = bot
 
     @commands.command()
+    @commands.has_permissions(administrator=True)
     async def embed(self, ctx, *, arg1):
         response = arg1
         embed = discord.Embed.from_dict(json.loads(response))
