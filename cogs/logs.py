@@ -22,6 +22,8 @@ class Logs(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
+        if before.author.bot == False: #Проверка на бота
+            return
         if before.author.id == 975327611267981314:
             return
         else:
